@@ -31,7 +31,7 @@ echo "bind 127.0.0.1" | sudo tee -a /etc/redis/redis.conf
 echo "dir /var/lib/redis" | sudo tee -a /etc/redis/redis.conf
 
 # Copy binaries to init.d
-cd $basedir && cp redis-server $redisdir
+cd $basedir && sudo cp redis-server $redisdir
 cd $redisdir && sudo mv redis-server /etc/init.d/redis-server
 sudo chmod +x /etc/init.d/redis-server
 cd "$redisdir/src" && sudo cp redis-cli /usr/local/bin/redis-cli
